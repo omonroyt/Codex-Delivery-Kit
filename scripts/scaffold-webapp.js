@@ -341,7 +341,7 @@ function writeFullstackReadme(destination, options, plan) {
   const lines = [
     "# Fullstack Scaffold",
     "",
-    "Estructura generada por Codex Develop Master.",
+    "Estructura generada por Codex-Delivery-Kit.",
     "",
     `- preset: ${normalizePreset(options.preset)}`,
     `- project_type: ${normalizeProjectType(options.projectType)}`,

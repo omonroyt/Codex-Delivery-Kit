@@ -1,6 +1,6 @@
 ---
 name: project-scaffolding
-description: Scaffolding de proyectos base para Codex Develop Master. Usar cuando se necesite inicializar frontend, backend o fullstack con stacks multi-lenguaje, verticales y cloud IaC.
+description: Scaffolding de proyectos base para Codex-Delivery-Kit. Usar cuando se necesite inicializar frontend, backend o fullstack con stacks multi-lenguaje, verticales y cloud IaC.
 ---
 
 # Project Scaffolding

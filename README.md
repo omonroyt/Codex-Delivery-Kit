@@ -1,95 +1,132 @@
-# Codex Develop Master
+<p align="center">
+  <img src="assets/codex-banner.svg" alt="Codex-Delivery-Kit Banner" width="100%" />
+</p>
 
-Kit open source para desarrollar software con Codex de punta a punta: discovery, arquitectura, build, QA, seguridad, despliegue y operacion.
+<h1 align="center">Codex-Delivery-Kit</h1>
 
-## Objetivo
+<p align="center">
+  Kit open source para construir software con Codex de punta a punta:
+  discovery, arquitectura, implementacion, QA, seguridad, despliegue y operacion.
+</p>
 
-- Estructura nativa Codex (`AGENTS.md`, `/.codex/commands`, `/.codex/skills`).
-- Flujo profesional completo, pero configurable.
-- V1 en español con reglas ASCII-safe para minimizar problemas con acentos y letra n.
-- Soporte de integraciones IA (MCP + n8n) y despliegue cloud.
+<p align="center">
+  <a href="https://www.linkedin.com/in/oscarmonroytellez/">
+    <img src="https://img.shields.io/badge/LinkedIn-Oscar%20Monroy%20T.-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Oscar Monroy T." />
+  </a>
+  <a href="https://www.instagram.com/monroy.dev">
+    <img src="https://img.shields.io/badge/Instagram-@monroy.dev-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram monroy.dev" />
+  </a>
+</p>
 
-## Lo que ya incluye
+## Vision
 
-- Presets de trabajo:
-  - `rapid`
-  - `robust`
-- Tipos de proyecto:
-  - `frontend`
-  - `backend`
-  - `fullstack`
-- Frontend:
-  - `react-tailwind-vite`
-  - `angular-tailwind-cli`
-- Backend:
-  - `fastify-prisma-postgres`
-  - `nestjs-prisma-postgres`
-  - `fastapi-postgres`
-  - `go-gin-postgres`
-  - `java-spring-postgres`
-- Cloud IaC:
-  - `terraform-aws-base`
-  - `terraform-gcp-base`
-  - `terraform-azure-base`
-- Verticales:
-  - `saas`
-  - `ecommerce`
-  - `marketplace`
-  - `ai-heavy`
+Codex-Delivery-Kit fue creado especialmente para la comunidad hispanohablante de desarrollo, con un enfoque practico:
 
-## Capacidades de producto viable
+- Menos tiempo configurando base tecnica.
+- Mas tiempo entregando valor real de negocio.
+- Flujo claro y repetible para trabajar con Codex de forma profesional.
 
-- Auth + RBAC + refresh tokens en stacks backend.
-- Modulos de pagos y mensajeria listos como baseline.
-- Seed y migraciones base:
-  - Prisma (Fastify/NestJS)
-  - Alembic (FastAPI)
-  - SQL migration files (Go)
-  - Flyway (Java)
-- Tests base + auth flow e2e por template backend.
-- Seguridad automatizada por template:
-  - `npm audit`
-  - `pip-audit`
-  - `govulncheck`
-  - `OWASP dependency-check` (Java)
-- CI/CD por template con preview deploy de PR via imagen en GHCR.
+## Por que usar este kit
 
-## Comandos principales
+| Area | Desarrollo convencional | Con Codex-Delivery-Kit |
+|---|---|---|
+| Setup inicial | Manual, disperso y variable | Guiado con comandos y plantillas |
+| Arquitectura base | Se define desde cero en cada proyecto | Presets y stacks listos para arrancar |
+| QA y seguridad | Se agrega tarde o de forma parcial | Incluido desde baseline |
+| Estandares de trabajo | Dependientes del equipo | AGENTS + skills + checklist integrados |
+| Tiempo para MVP tecnico | Alto | Menor y mas predecible |
 
-Inicializar contexto:
+## Grafico de velocidad (referencial)
+
+Comparativa estimada para llegar a una base productiva (no benchmark absoluto):
+
+| Modelo | Tiempo estimado fase inicial | Velocidad relativa |
+|---|---|---|
+| Convencional | 10 dias | 1.0x |
+| Codex-Delivery-Kit | 4 dias | 2.5x |
+
+```text
+Convencional         [##########] 10 dias
+Codex-Delivery-Kit [####......]  4 dias
+```
+
+```mermaid
+flowchart LR
+    A["Convencional<br/>~10 dias para base productiva"] --> C["Inicio de implementacion real"]
+    B["Codex-Delivery-Kit<br/>~4 dias para base productiva"] --> C
+    C --> D["Ahorro estimado en fase inicial: ~60%"]
+```
+
+## Como funciona
+
+El flujo recomendado dentro del repo es:
+
+1. Discovery y requisitos.
+2. Seleccion o confirmacion de stack.
+3. Plan tecnico y de entrega.
+4. Implementacion incremental.
+5. Validacion (lint, tests, build, seguridad).
+6. Release y operacion.
+
+Todo el flujo esta alineado con `AGENTS.md`, `.codex/commands` y `.codex/skills`.
+
+## Que incluye
+
+| Categoria | Opciones incluidas |
+|---|---|
+| Presets | `rapid`, `robust` |
+| Tipos de proyecto | `frontend`, `backend`, `fullstack` |
+| Frontend | `react-tailwind-vite`, `angular-tailwind-cli` |
+| Backend | `fastify-prisma-postgres`, `nestjs-prisma-postgres`, `fastapi-postgres`, `go-gin-postgres`, `java-spring-postgres` |
+| Cloud IaC | `terraform-aws-base`, `terraform-gcp-base`, `terraform-azure-base` |
+| Verticales | `saas`, `ecommerce`, `marketplace`, `ai-heavy` |
+
+## Capacidades listas para usar
+
+| Bloque | Incluido por defecto |
+|---|---|
+| Seguridad de acceso | Auth + RBAC + refresh tokens (backends) |
+| Dominio inicial | Modulos base de pagos y mensajeria |
+| Migraciones y seed | Prisma, Alembic, SQL files, Flyway (segun stack) |
+| Calidad | Tests base + auth flow e2e en templates backend |
+| Seguridad automatizada | `npm audit`, `pip-audit`, `govulncheck`, `OWASP dependency-check` |
+| Entrega | CI/CD con preview deploy de PR via GHCR |
+
+## Guia de uso paso a paso
+
+### 1) Inicializar contexto
 
 ```bash
 node scripts/init-context.js
 ```
 
-Scaffold directo:
+Este paso prepara el contexto de proyecto para que Codex aplique reglas y convenciones correctas.
+
+### 2) Scaffolding directo por template
 
 ```bash
 node scripts/scaffold-webapp.js --template fastapi-postgres --target apps/api
 ```
 
-Scaffold por preset/tipo:
+Usalo cuando ya definiste el stack exacto.
+
+### 3) Scaffolding por preset y tipo
 
 ```bash
 node scripts/scaffold-webapp.js --preset robust --project-type fullstack --frontend react --backend-stack java --vertical saas --cloud aws --target apps/my-product
 ```
 
-## Verificacion
+Usalo cuando quieres componer el proyecto por nivel de robustez, tipo de app y entorno cloud.
 
-Checklist del proyecto actual:
+### 4) Verificar checklist y estructura
 
 ```bash
 node scripts/verify-checklist.js
-```
-
-Verificacion estructural de templates:
-
-```bash
 node scripts/verify-scaffold-templates.js
 node scripts/verify-scaffold-templates.js --with-install
 ```
 
-## Portal docs
+### 5) Levantar el portal de docs
 
 ```bash
 cd docs-site
@@ -97,14 +134,24 @@ npm install
 npm run docs:dev
 ```
 
-## CI del repo
+## CI/CD del repositorio
 
-- `.github/workflows/template-ci.yml`
-- `.github/workflows/template-cicd.yml`
-- `.github/workflows/template-security.yml`
-- `.github/workflows/docs-release.yml`
+| Workflow | Objetivo |
+|---|---|
+| `.github/workflows/template-ci.yml` | Validacion continua de templates |
+| `.github/workflows/template-cicd.yml` | Pipeline de build y despliegue |
+| `.github/workflows/template-security.yml` | Escaneos de seguridad |
+| `.github/workflows/docs-release.yml` | Publicacion de documentacion |
 
-## Nota UI
+## Nota frontend
 
 - Bootstrap queda fuera por defecto.
-- Base recomendada: React/Angular + Tailwind.
+- Base recomendada: React o Angular con Tailwind.
+
+## Creditos
+
+- Inspiracion tomada del Kit de Antigravity de vudovn: https://github.com/vudovn/antigravity-kit
+- Esta version fue creada especialmente para Codex, con funcionalidades nuevas enfocadas tambien en la comunidad hispanohablante.
+- Nombre: Oscar Monroy T.
+- LinkedIn: https://www.linkedin.com/in/oscarmonroytellez/
+- Instagram: https://www.instagram.com/monroy.dev

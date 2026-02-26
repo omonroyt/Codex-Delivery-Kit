@@ -92,7 +92,7 @@ async function main() {
   });
 
   try {
-    console.log("Inicializador de contexto para Codex Develop Master");
+    console.log("Inicializador de contexto para Codex-Delivery-Kit");
     console.log("Responde en formato corto. Puedes editar despues el archivo generado.\n");
 
     const projectName = await ask(rl, "Nombre del proyecto", "mi-proyecto");

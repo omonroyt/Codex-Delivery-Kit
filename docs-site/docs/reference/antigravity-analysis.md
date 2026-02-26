@@ -23,7 +23,7 @@
 3. Convenciones de archivo y comandos que no siguen estructura `.codex`.
 4. Suposiciones de modos y sintaxis especifica del runtime original.
 
-## Decisiones de refactor para Codex Develop Master
+## Decisiones de refactor para Codex-Delivery-Kit
 
 1. Reemplazar regla central `GEMINI.md` por `AGENTS.md` nativo.
 2. Reescribir workflows a `.codex/commands/*.md`.

@@ -4,7 +4,7 @@ const docsBase = process.env.DOCS_BASE || "/";
 
 export default defineConfig({
   base: docsBase,
-  title: "Codex Develop Master",
+  title: "Codex-Delivery-Kit",
   description: "Kit profesional para desarrollo con Codex de extremo a extremo",
   lang: "es-ES",
   themeConfig: {

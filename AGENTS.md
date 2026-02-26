@@ -1,4 +1,4 @@
-# AGENTS.md - Codex Develop Master
+# AGENTS.md - Codex-Delivery-Kit
 
 Este archivo define como debe trabajar Codex en este repositorio.
 

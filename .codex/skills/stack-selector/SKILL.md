@@ -1,6 +1,6 @@
 ---
 name: stack-selector
-description: Selector de stack para Codex Develop Master. Usar para elegir entre Scale Mode, Fast Develop Mode o stack custom al iniciar proyecto o cuando se redefine arquitectura.
+description: Selector de stack para Codex-Delivery-Kit. Usar para elegir entre Scale Mode, Fast Develop Mode o stack custom al iniciar proyecto o cuando se redefine arquitectura.
 ---
 
 # Stack Selector
