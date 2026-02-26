@@ -1,14 +1,15 @@
-# ASCII Spanish V1
+# Spanish Language Policy V2
 
-## Regla
+## Regla general
 
-En artefactos tecnicos de proyecto, usar espanol ASCII-safe:
+- Usar español con ortografía completa en documentación, guías, reportes y mensajes orientados a personas.
+- Mantener UTF-8 como codificación estándar para textos visibles del repositorio.
 
-- Evitar acentos.
-- Evitar `n`.
-- Usar nombres de archivos y claves en ASCII puro.
+## Disciplina técnica
 
-## Excepcion
+- Usar inglés en identificadores técnicos: nombres de archivos, variables, claves, funciones, tipos, rutas técnicas y comandos.
+- Aplicar ASCII únicamente cuando exista una restricción técnica explícita (tooling, compatibilidad o integración heredada).
 
-Si el usuario pide explicitamente texto con ortografia completa, usarlo solo en la respuesta visible y no en identificadores tecnicos.
+## Excepción
 
+Si un entorno exige ASCII estricto para evitar fallos de codificación, documentar la excepción en el artefacto afectado.

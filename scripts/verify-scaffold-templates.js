@@ -76,6 +76,25 @@ function installAndBuildNodeProject(projectPath, label) {
   }
 }
 
+function verifyAngularInitializer(projectPath) {
+  console.log("[run] npm install angular initializer");
+  if (!run("npm", ["install", "--no-audit", "--no-fund"], projectPath, 180000)) {
+    throw new Error("Fallo npm install en angular initializer");
+  }
+
+  console.log("[run] npm run setup -- --dry-run --name smoke-angular-app");
+  if (
+    !run(
+      "npm",
+      ["run", "setup", "--", "--dry-run", "--name", "smoke-angular-app"],
+      projectPath,
+      180000
+    )
+  ) {
+    throw new Error("Fallo dry-run del angular initializer");
+  }
+}
+
 function main() {
   const options = parseArgs(process.argv);
   const repoRoot = path.resolve(__dirname, "..");
@@ -344,6 +363,8 @@ function main() {
     assertFile(path.join(targets.react, ".github", "workflows", "ci-cd.yml"));
     assertFile(path.join(targets.react, "tailwind.config.cjs"));
     assertFile(path.join(targets.angular, "README.md"));
+    assertFile(path.join(targets.angular, "package.json"));
+    assertFile(path.join(targets.angular, "init-angular-tailwind.js"));
     assertFile(path.join(targets.fastify, "package.json"));
     assertFile(path.join(targets.fastify, "prisma", "schema.prisma"));
     assertFile(
@@ -428,6 +449,7 @@ function main() {
     assertFile(path.join(targets.fullstackCloud, "infra", "main.tf"));
 
     if (options.withInstall) {
+      verifyAngularInitializer(targets.angular);
       installAndBuildNodeProject(targets.react, "react template");
       console.log("[run] npm test react template");
       if (!run("npm", ["run", "test"], targets.react, 180000)) {

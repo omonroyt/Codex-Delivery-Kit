@@ -251,7 +251,7 @@ function copyRecursive(src, dst) {
 
 function ensureEmptyOrMissing(destination) {
   if (fs.existsSync(destination) && fs.readdirSync(destination).length > 0) {
-    throw new Error(`Destino no vacio: ${destination}`);
+    throw new Error(`Destino no vacío: ${destination}`);
   }
   fs.mkdirSync(destination, { recursive: true });
 }
@@ -277,12 +277,12 @@ function resolvePlan(options) {
   const cloud = normalizeCloud(options.cloud);
 
   if (!["rapid", "robust"].includes(preset)) {
-    throw new Error(`Preset invalido: ${options.preset}`);
+    throw new Error(`Preset inválido: ${options.preset}`);
   }
 
   if (!["frontend", "backend", "fullstack"].includes(projectType)) {
     throw new Error(
-      `Project type invalido: ${options.projectType}. Usa frontend|backend|fullstack`
+      `Project type inválido: ${options.projectType}. Usa frontend|backend|fullstack`
     );
   }
 
@@ -292,7 +292,7 @@ function resolvePlan(options) {
     backendTemplate = backendTemplateFromStack(backendStack);
     if (!backendTemplate) {
       throw new Error(
-        `backend-stack invalido: ${options.backendStack}. Usa fastify|nestjs|fastapi|go|java`
+        `backend-stack inválido: ${options.backendStack}. Usa fastify|nestjs|fastapi|go|java`
       );
     }
   }
@@ -326,7 +326,7 @@ function resolvePlan(options) {
   if (cloud) {
     const cloudTemplate = cloudTemplateFromProvider(cloud);
     if (!cloudTemplate) {
-      throw new Error(`cloud invalido: ${options.cloud}. Usa aws|gcp|azure`);
+      throw new Error(`cloud inválido: ${options.cloud}. Usa aws|gcp|azure`);
     }
     plan.push({
       template: cloudTemplate,
@@ -362,7 +362,7 @@ function writeFullstackReadme(destination, options, plan) {
   lines.push("## Siguientes pasos");
   lines.push("");
   lines.push("1. Entrar a apps/web y apps/api.");
-  lines.push("2. Configurar entornos segun stack backend elegido.");
+  lines.push("2. Configurar entornos según el stack backend elegido.");
   lines.push("3. Levantar base de datos con docker compose en apps/api.");
   lines.push("4. Ejecutar migraciones + seed del backend.");
   lines.push("5. Si existe carpeta infra, ejecutar terraform init/plan/apply.");
@@ -421,8 +421,10 @@ function nextStepsForTemplate(target, templateName) {
   if (templateName === "angular-tailwind-cli") {
     return [
       `cd ${target}`,
-      "leer README.md",
-      "ejecutar comandos Angular CLI + Tailwind",
+      "npm install",
+      "npm run setup -- --name my-angular-app",
+      "cd my-angular-app",
+      "npm run start",
     ];
   }
 
@@ -484,7 +486,7 @@ function main() {
     const source = verticalBlueprints[vertical];
     if (!source || !fs.existsSync(source)) {
       throw new Error(
-        `vertical invalido: ${args.vertical}. Usa saas|ecommerce|marketplace|ai-heavy`
+        `vertical inválido: ${args.vertical}. Usa saas|ecommerce|marketplace|ai-heavy`
       );
     }
     const verticalTarget = path.join(destination, "docs", "vertical");

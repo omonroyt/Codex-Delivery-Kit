@@ -4,13 +4,13 @@
 
 ### rapid
 
-- Objetivo: velocidad maxima para entregar rapido.
+- Objetivo: velocidad máxima para entregar rápido.
 - Frontend recomendado: React + Tailwind.
 - Backend recomendado: Fastify + Prisma + PostgreSQL.
 
 ### robust
 
-- Objetivo: control, gobierno tecnico y escalado.
+- Objetivo: control, gobierno técnico y escalado.
 - Frontend recomendado: React o Angular + Tailwind.
 - Backend recomendado: NestJS + Prisma + PostgreSQL.
 
@@ -35,7 +35,7 @@
 - `marketplace`
 - `ai-heavy`
 
-## Seleccion practica
+## Selección práctica
 
 1. `rapid + fastify` para MVP en horas.
 2. `robust + nestjs` para producto core y equipos que escalan.

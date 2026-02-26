@@ -1,0 +1,10 @@
+{
+  "name": "angular-tailwind-cli-initializer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Initializer para Angular + Tailwind sin Bootstrap",
+  "scripts": {
+    "setup": "node init-angular-tailwind.js",
+    "setup:dry": "node init-angular-tailwind.js --dry-run --name my-angular-app"
+  }
+}

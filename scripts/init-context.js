@@ -16,7 +16,7 @@ function ask(rl, question, defaultValue = "") {
 
 function toYesNo(value) {
   const normalized = String(value || "").toLowerCase();
-  return normalized.startsWith("s") || normalized.startsWith("y") ? "si" : "no";
+  return normalized.startsWith("s") || normalized.startsWith("y") ? "yes" : "no";
 }
 
 function writeContext(data) {
@@ -45,7 +45,8 @@ function writeContext(data) {
     "",
     "- Edita este archivo cuando cambie el alcance.",
     "- Este contexto es la base para decisiones de Codex.",
-    "- Mantener contenido ASCII-safe.",
+    "- Usa español con ortografía correcta en documentación.",
+    "- Mantén identificadores técnicos en inglés.",
     "",
   ].join("\n");
 
@@ -59,7 +60,7 @@ function writeContext(data) {
     const fallbackTarget = path.join(process.cwd(), "project-context.md");
     fs.writeFileSync(fallbackTarget, output, "utf8");
     console.warn(
-      `[warn] No se pudo escribir en .codex (${error.code || "error"}). Se uso fallback: ${fallbackTarget}`
+      `[warn] No se pudo escribir en .codex (${error.code || "error"}). Se usó fallback: ${fallbackTarget}`
     );
   }
 }
@@ -68,7 +69,7 @@ async function main() {
   if (process.argv.includes("--defaults")) {
     writeContext({
       projectName: "mi-proyecto",
-      projectGoal: "entregar un producto usable en produccion",
+      projectGoal: "entregar un producto usable en producción",
       stackMode: "fast",
       appType: "fullstack",
       projectType: "fullstack",
@@ -78,10 +79,10 @@ async function main() {
       vertical: "saas",
       cloud: "aws",
       database: "postgres",
-      includeAI: "si",
-      includeN8N: "si",
-      includeMCP: "si",
-      compliance: "basico",
+      includeAI: "yes",
+      includeN8N: "yes",
+      includeMCP: "yes",
+      compliance: "basic",
     });
     return;
   }
@@ -93,13 +94,13 @@ async function main() {
 
   try {
     console.log("Inicializador de contexto para Codex-Delivery-Kit");
-    console.log("Responde en formato corto. Puedes editar despues el archivo generado.\n");
+    console.log("Responde en formato corto. Puedes editar después el archivo generado.\n");
 
     const projectName = await ask(rl, "Nombre del proyecto", "mi-proyecto");
     const projectGoal = await ask(
       rl,
       "Objetivo principal",
-      "entregar un producto usable en produccion"
+      "entregar un producto usable en producción"
     );
     const stackMode = await ask(rl, "Stack mode (scale|fast|custom)", "fast");
     const appType = await ask(rl, "Tipo de app (web|api|mobile|fullstack|ia)", "fullstack");
@@ -120,15 +121,15 @@ async function main() {
       "Vertical (none|saas|ecommerce|marketplace|ai-heavy)",
       "none"
     );
-    const cloud = await ask(rl, "Cloud principal (aws|gcp|azure|otro)", "aws");
+    const cloud = await ask(rl, "Cloud principal (aws|gcp|azure|other)", "aws");
     const database = await ask(rl, "Base de datos principal", "postgres");
-    const includeAI = toYesNo(await ask(rl, "Incluye funcionalidades IA? (si|no)", "si"));
-    const includeN8N = toYesNo(await ask(rl, "Usa n8n? (si|no)", "si"));
-    const includeMCP = toYesNo(await ask(rl, "Usa MCP? (si|no)", "si"));
+    const includeAI = toYesNo(await ask(rl, "Incluye funcionalidades IA? (sí|no)", "sí"));
+    const includeN8N = toYesNo(await ask(rl, "Usa n8n? (sí|no)", "sí"));
+    const includeMCP = toYesNo(await ask(rl, "Usa MCP? (sí|no)", "sí"));
     const compliance = await ask(
       rl,
-      "Compliance objetivo (ninguno|basico|soc2|iso27001|otro)",
-      "basico"
+      "Compliance objetivo (none|basic|soc2|iso27001|other)",
+      "basic"
     );
 
     writeContext({

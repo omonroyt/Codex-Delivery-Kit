@@ -1,17 +1,17 @@
 # Codex-Delivery-Kit
 
-Kit open source para desarrollar software con Codex desde la idea inicial hasta produccion.
+Kit open source para desarrollar software con Codex desde la idea inicial hasta producción.
 
 ## Propuesta V1
 
 - Flujo de trabajo completo por fases.
 - Skills nativas de Codex en `/.codex/skills`.
 - Comandos slash personalizados en `/.codex/commands`.
-- Politica de idioma en espanol con modo ASCII-safe.
-- Integracion IA orientada a MCP y n8n.
+- Política de idioma: español con ortografía completa para documentación y disciplina técnica en inglés para identificadores.
+- Integración IA orientada a MCP y n8n.
 - Multi-stack backend: Fastify, NestJS, FastAPI, Go, Java.
 - Cloud IaC listas: AWS, GCP, Azure (Terraform).
-- CI/CD por template con preview deploy en PR via GHCR.
+- CI/CD por template con preview deploy en PR vía GHCR.
 - Migraciones + seed + tests + seguridad automatizada por template.
 
 ## Resultado esperado

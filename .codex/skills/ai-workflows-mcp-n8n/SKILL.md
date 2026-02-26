@@ -5,7 +5,7 @@ description: Diseno y operacion de flujos IA usando MCP y n8n con buenas practic
 
 # AI Workflows MCP N8N
 
-Diseñar flujos IA robustos para uso real en produccion.
+Disenar flujos IA robustos para uso real en produccion.
 
 ## Alcance
 

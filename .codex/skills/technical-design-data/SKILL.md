@@ -17,7 +17,7 @@ Aterrar arquitectura en contratos y modelos concretos.
 ## Reglas
 
 - Definir idempotencia en operaciones criticas.
-- Diseñar migraciones reversibles cuando sea posible.
+- Disenar migraciones reversibles cuando sea posible.
 - Incluir reglas de retencion y borrado de datos.
 
 ## Recursos

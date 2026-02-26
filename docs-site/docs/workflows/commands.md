@@ -6,23 +6,23 @@ Los comandos viven en `/.codex/commands`.
 
 1. `/kickoff`: arranque guiado.
 2. `/scaffold`: crear base por preset y tipo.
-3. `/stack`: seleccion o ajuste de stack.
-4. `/plan`: plan tecnico sin implementacion final.
-5. `/build`: ejecucion por incrementos.
+3. `/stack`: selección o ajuste de stack.
+4. `/plan`: plan técnico sin implementación final.
+5. `/build`: ejecución por incrementos.
 6. `/verify`: gates de calidad y seguridad.
-7. `/release`: salida a produccion.
-8. `/operate`: operacion y soporte.
-9. `/ai-flow`: diseno de automatizaciones IA.
+7. `/release`: salida a producción.
+8. `/operate`: operación y soporte.
+9. `/ai-flow`: diseño de automatizaciones IA.
 
-## Convencion
+## Convención
 
-- Usar `$ARGUMENTS` para contexto especifico.
+- Usar `$ARGUMENTS` para contexto específico.
 - Activar skills por nombre con formato `$skill-name`.
-- Entregar salida con siguiente accion clara.
+- Entregar salida con siguiente acción clara.
 
 ## Nota de `/scaffold`
 
 Permite dos formas:
 
 1. Template directo (`--template`).
-2. Seleccion por preset/tipo (`--preset`, `--project-type`, `--frontend`, `--backend-stack`, `--vertical`, `--cloud`).
+2. Selección por preset/tipo (`--preset`, `--project-type`, `--frontend`, `--backend-stack`, `--vertical`, `--cloud`).

@@ -1,56 +1,31 @@
-# Angular Tailwind CLI Template
+# Angular Tailwind Initializer
 
-Template de inicializacion rapida Angular + Tailwind (sin Bootstrap).
+Template de inicialización guiada para Angular + Tailwind (sin Bootstrap).
 
 ## Requisitos
 
 - Node LTS
 - npm
+- Acceso a internet para descargar paquetes de Angular CLI
 
-## Pasos
-
-1. Crear proyecto Angular:
-
-```bash
-npm create @angular@latest my-angular-app -- --routing --style css --ssr false --skip-git
-```
-
-2. Instalar Tailwind:
+## Uso rápido
 
 ```bash
-cd my-angular-app
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init
+npm install
+npm run setup -- --name my-angular-app
 ```
 
-3. Configurar `tailwind.config.js`:
+Este comando crea una app Angular nueva y aplica configuración base de Tailwind.
 
-```js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,ts}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-```
-
-4. Reemplazar `src/styles.css` con:
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-5. Iniciar:
+## Dry run (sin cambios)
 
 ```bash
-npm run start
+npm run setup -- --dry-run --name my-angular-app
 ```
 
-## Nota
+## Resultado esperado
 
-Este template prioriza arranque rapido con Angular CLI oficial y estilos en Tailwind.
-
+1. Carpeta `my-angular-app` creada.
+2. Tailwind instalado y configurado.
+3. `src/styles.css` preparado con directivas Tailwind.
+4. Proyecto listo para `npm run start` dentro de la app creada.

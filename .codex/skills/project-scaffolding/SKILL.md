@@ -35,8 +35,9 @@ Inicializar estructura de proyecto reutilizable y coherente con el kit.
 ## Reglas
 
 - Mantener salida sin Bootstrap.
-- Mantener nombres ASCII-safe.
-- Si el template no aplica, sugerir el mas cercano y pedir confirmacion.
+- Mantener identificadores técnicos en inglés.
+- Mantener documentación y mensajes orientados a usuarios en español con ortografía correcta.
+- Si el template no aplica, sugerir el más cercano y pedir confirmación.
 
 ## Recursos
 

@@ -6,7 +6,7 @@
 
 <p align="center">
   Kit open source para construir software con Codex de punta a punta:
-  discovery, arquitectura, implementacion, QA, seguridad, despliegue y operacion.
+  discovery, arquitectura, implementación, QA, seguridad, despliegue y operación.
 </p>
 
 <p align="center">
@@ -18,79 +18,79 @@
   </a>
 </p>
 
-## Vision
+## Visión
 
-Codex-Delivery-Kit fue creado especialmente para la comunidad hispanohablante de desarrollo, con un enfoque practico:
+Codex-Delivery-Kit fue creado especialmente para la comunidad hispanohablante de desarrollo, con un enfoque práctico:
 
-- Menos tiempo configurando base tecnica.
-- Mas tiempo entregando valor real de negocio.
+- Menos tiempo configurando base técnica.
+- Más tiempo entregando valor real de negocio.
 - Flujo claro y repetible para trabajar con Codex de forma profesional.
 
-## Por que usar este kit
+## Por qué usar este kit
 
-| Area                    | Desarrollo convencional               | Con Codex-Delivery-Kit                 |
+| Área                    | Desarrollo convencional               | Con Codex-Delivery-Kit                 |
 | ----------------------- | ------------------------------------- | -------------------------------------- |
 | Setup inicial           | Manual, disperso y variable           | Guiado con comandos y plantillas       |
 | Arquitectura base       | Se define desde cero en cada proyecto | Presets y stacks listos para arrancar  |
 | QA y seguridad          | Se agrega tarde o de forma parcial    | Incluido desde baseline                |
-| Estandares de trabajo   | Dependientes del equipo               | AGENTS + skills + checklist integrados |
-| Tiempo para MVP tecnico | Alto                                  | Menor y mas predecible                 |
+| Estándares de trabajo   | Dependientes del equipo               | AGENTS + skills + checklist integrados |
+| Tiempo para MVP técnico | Alto                                  | Menor y más predecible                 |
 
-## Grafico de velocidad (referencial)
+## Gráfico de velocidad (referencial)
 
 Comparativa estimada para llegar a una base productiva (no benchmark absoluto):
 
 | Modelo             | Tiempo estimado fase inicial | Velocidad relativa |
 | ------------------ | ---------------------------- | ------------------ |
-| Convencional       | 10 dias                      | 1.0x               |
-| Codex-Delivery-Kit | 4 dias                       | 2.5x               |
+| Convencional       | 10 días                      | 1.0x               |
+| Codex-Delivery-Kit | 4 días                       | 2.5x               |
 
 ```text
-Convencional         [##########] 10 dias
-Codex-Delivery-Kit [####......]  4 dias
+Convencional      [##########] 10 días
+Codex-Delivery-Kit [####......]  4 días
 ```
 
 ```mermaid
 flowchart LR
-    A["Convencional<br/>~10 dias para base productiva"] --> C["Inicio de implementacion real"]
-    B["Codex-Delivery-Kit<br/>~4 dias para base productiva"] --> C
+    A["Convencional<br/>~10 días para base productiva"] --> C["Inicio de implementación real"]
+    B["Codex-Delivery-Kit<br/>~4 días para base productiva"] --> C
     C --> D["Ahorro estimado en fase inicial: ~60%"]
 ```
 
-## Como funciona
+## Cómo funciona
 
 El flujo recomendado dentro del repo es:
 
 1. Discovery y requisitos.
-2. Seleccion o confirmacion de stack.
-3. Plan tecnico y de entrega.
-4. Implementacion incremental.
-5. Validacion (lint, tests, build, seguridad).
-6. Release y operacion.
+2. Selección o confirmación de stack.
+3. Plan técnico y de entrega.
+4. Implementación incremental.
+5. Validación (lint, tests, build, seguridad).
+6. Release y operación.
 
-Todo el flujo esta alineado con `AGENTS.md`, `.codex/commands` y `.codex/skills`.
+Todo el flujo está alineado con `AGENTS.md`, `.codex/commands` y `.codex/skills`.
 
-## Que incluye
+## Qué incluye
 
-| Categoria         | Opciones incluidas                                                                                                 |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Presets           | `rapid`, `robust`                                                                                                  |
-| Tipos de proyecto | `frontend`, `backend`, `fullstack`                                                                                 |
-| Frontend          | `react-tailwind-vite`, `angular-tailwind-cli`                                                                      |
-| Backend           | `fastify-prisma-postgres`, `nestjs-prisma-postgres`, `fastapi-postgres`, `go-gin-postgres`, `java-spring-postgres` |
-| Cloud IaC         | `terraform-aws-base`, `terraform-gcp-base`, `terraform-azure-base`                                                 |
-| Verticales        | `saas`, `ecommerce`, `marketplace`, `ai-heavy`                                                                     |
+| Categoría          | Opciones incluidas                                                                                                   |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| Presets            | `rapid`, `robust`                                                                                                    |
+| Tipos de proyecto  | `frontend`, `backend`, `fullstack`                                                                                   |
+| Frontend           | `react-tailwind-vite`, `angular-tailwind-cli` (initializer guiado)                                                  |
+| Backend            | `fastify-prisma-postgres`, `nestjs-prisma-postgres`, `fastapi-postgres`, `go-gin-postgres`, `java-spring-postgres` |
+| Cloud IaC          | `terraform-aws-base`, `terraform-gcp-base`, `terraform-azure-base`                                                  |
+| Verticales         | `saas`, `ecommerce`, `marketplace`, `ai-heavy`                                                                      |
 
 ## Capacidades listas para usar
 
 | Bloque                 | Incluido por defecto                                              |
 | ---------------------- | ----------------------------------------------------------------- |
 | Seguridad de acceso    | Auth + RBAC + refresh tokens (backends)                           |
-| Dominio inicial        | Modulos base de pagos y mensajeria                                |
-| Migraciones y seed     | Prisma, Alembic, SQL files, Flyway (segun stack)                  |
+| Dominio inicial        | Módulos base de pagos y mensajería                                |
+| Migraciones y seed     | Prisma, Alembic, SQL files, Flyway (según stack)                 |
 | Calidad                | Tests base + auth flow e2e en templates backend                   |
 | Seguridad automatizada | `npm audit`, `pip-audit`, `govulncheck`, `OWASP dependency-check` |
-| Entrega                | CI/CD con preview deploy de PR via GHCR                           |
+| Entrega                | CI/CD con preview deploy de PR vía GHCR                           |
 
 ## Sitio de demostración (proyecto separado)
 
@@ -109,7 +109,7 @@ npm run dev    # abre http://localhost:5173
 
 En este repositorio principal ya no se incluye la carpeta `showcase`.
 
-## Guia de uso paso a paso
+## Guía de uso paso a paso
 
 ### 1) Inicializar contexto
 
@@ -125,7 +125,7 @@ Este paso prepara el contexto de proyecto para que Codex aplique reglas y conven
 node scripts/scaffold-webapp.js --template fastapi-postgres --target apps/api
 ```
 
-Usalo cuando ya definiste el stack exacto.
+Úsalo cuando ya definiste el stack exacto.
 
 ### 3) Scaffolding por preset y tipo
 
@@ -133,12 +133,12 @@ Usalo cuando ya definiste el stack exacto.
 node scripts/scaffold-webapp.js --preset robust --project-type fullstack --frontend react --backend-stack java --vertical saas --cloud aws --target apps/my-product
 ```
 
-Usalo cuando quieres componer el proyecto por nivel de robustez, tipo de app y entorno cloud.
+Úsalo cuando quieres componer el proyecto por nivel de robustez, tipo de app y entorno cloud.
 
 ### 4) Verificar checklist y estructura
 
 ```bash
-node scripts/verify-checklist.js
+node scripts/verify-checklist.js apps/api
 node scripts/verify-scaffold-templates.js
 node scripts/verify-scaffold-templates.js --with-install
 ```
@@ -155,15 +155,15 @@ npm run docs:dev
 
 | Workflow                                  | Objetivo                         |
 | ----------------------------------------- | -------------------------------- |
-| `.github/workflows/template-ci.yml`       | Validacion continua de templates |
+| `.github/workflows/template-ci.yml`       | Validación continua de templates |
 | `.github/workflows/template-cicd.yml`     | Pipeline de build y despliegue   |
 | `.github/workflows/template-security.yml` | Escaneos de seguridad            |
-| `.github/workflows/docs-release.yml`      | Publicacion de documentacion     |
+| `.github/workflows/docs-release.yml`      | Publicación de documentación     |
 
-## Creditos
+## Créditos
 
-- Inspiracion tomada del Kit de Antigravity de vudovn: https://github.com/vudovn/antigravity-kit
-- Esta version fue creada especialmente para Codex, con funcionalidades nuevas enfocadas tambien en la comunidad hispanohablante.
+- Inspiración tomada del Kit de Antigravity de vudovn: https://github.com/vudovn/antigravity-kit
+- Esta versión fue creada especialmente para Codex, con funcionalidades nuevas enfocadas también en la comunidad hispanohablante.
 - Creado por: [Oscar Monroy T.](https://omonroyt.github.io/)
 - LinkedIn: https://www.linkedin.com/in/oscarmonroytellez/
 - Instagram: https://www.instagram.com/monroy.dev

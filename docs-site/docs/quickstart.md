@@ -7,7 +7,7 @@ node scripts/init-context.js
 ```
 
 Se crea `.codex/project-context.md`.
-Si `.codex` esta restringida, se usa `project-context.md` en la raiz.
+Si `.codex` está restringida, se usa `project-context.md` en la raíz.
 
 ## 2. Iniciar flujo en Codex
 
@@ -32,11 +32,11 @@ node scripts/scaffold-webapp.js --preset rapid --project-type fullstack --fronte
 ## 3. Ejecutar validaciones
 
 ```bash
-node scripts/verify-checklist.js
+node scripts/verify-checklist.js apps/api
 node scripts/verify-scaffold-templates.js
 ```
 
-Para validacion completa del template React/Fastify/Nest (incluye install y build):
+Para validación completa de templates Node y Angular initializer (incluye install/build/dry-run):
 
 ```bash
 node scripts/verify-scaffold-templates.js --with-install
@@ -44,8 +44,8 @@ node scripts/verify-scaffold-templates.js --with-install
 
 ## 4. Mantener trazabilidad
 
-- Actualizar contexto cuando cambie alcance.
-- Mantener ADR y notas tecnicas.
+- Actualizar contexto cuando cambie el alcance.
+- Mantener ADR y notas técnicas.
 - No cerrar tareas sin evidencia.
-- Mantener frontend sin Bootstrap salvo excepcion explicita.
+- Mantener frontend sin Bootstrap salvo excepción explícita.
 - En templates backend, mantener migraciones y seed en versionamiento.
