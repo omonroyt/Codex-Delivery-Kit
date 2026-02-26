@@ -28,22 +28,22 @@ Codex-Delivery-Kit fue creado especialmente para la comunidad hispanohablante de
 
 ## Por que usar este kit
 
-| Area | Desarrollo convencional | Con Codex-Delivery-Kit |
-|---|---|---|
-| Setup inicial | Manual, disperso y variable | Guiado con comandos y plantillas |
-| Arquitectura base | Se define desde cero en cada proyecto | Presets y stacks listos para arrancar |
-| QA y seguridad | Se agrega tarde o de forma parcial | Incluido desde baseline |
-| Estandares de trabajo | Dependientes del equipo | AGENTS + skills + checklist integrados |
-| Tiempo para MVP tecnico | Alto | Menor y mas predecible |
+| Area                    | Desarrollo convencional               | Con Codex-Delivery-Kit                 |
+| ----------------------- | ------------------------------------- | -------------------------------------- |
+| Setup inicial           | Manual, disperso y variable           | Guiado con comandos y plantillas       |
+| Arquitectura base       | Se define desde cero en cada proyecto | Presets y stacks listos para arrancar  |
+| QA y seguridad          | Se agrega tarde o de forma parcial    | Incluido desde baseline                |
+| Estandares de trabajo   | Dependientes del equipo               | AGENTS + skills + checklist integrados |
+| Tiempo para MVP tecnico | Alto                                  | Menor y mas predecible                 |
 
 ## Grafico de velocidad (referencial)
 
 Comparativa estimada para llegar a una base productiva (no benchmark absoluto):
 
-| Modelo | Tiempo estimado fase inicial | Velocidad relativa |
-|---|---|---|
-| Convencional | 10 dias | 1.0x |
-| Codex-Delivery-Kit | 4 dias | 2.5x |
+| Modelo             | Tiempo estimado fase inicial | Velocidad relativa |
+| ------------------ | ---------------------------- | ------------------ |
+| Convencional       | 10 dias                      | 1.0x               |
+| Codex-Delivery-Kit | 4 dias                       | 2.5x               |
 
 ```text
 Convencional         [##########] 10 dias
@@ -72,25 +72,25 @@ Todo el flujo esta alineado con `AGENTS.md`, `.codex/commands` y `.codex/skills`
 
 ## Que incluye
 
-| Categoria | Opciones incluidas |
-|---|---|
-| Presets | `rapid`, `robust` |
-| Tipos de proyecto | `frontend`, `backend`, `fullstack` |
-| Frontend | `react-tailwind-vite`, `angular-tailwind-cli` |
-| Backend | `fastify-prisma-postgres`, `nestjs-prisma-postgres`, `fastapi-postgres`, `go-gin-postgres`, `java-spring-postgres` |
-| Cloud IaC | `terraform-aws-base`, `terraform-gcp-base`, `terraform-azure-base` |
-| Verticales | `saas`, `ecommerce`, `marketplace`, `ai-heavy` |
+| Categoria         | Opciones incluidas                                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Presets           | `rapid`, `robust`                                                                                                  |
+| Tipos de proyecto | `frontend`, `backend`, `fullstack`                                                                                 |
+| Frontend          | `react-tailwind-vite`, `angular-tailwind-cli`                                                                      |
+| Backend           | `fastify-prisma-postgres`, `nestjs-prisma-postgres`, `fastapi-postgres`, `go-gin-postgres`, `java-spring-postgres` |
+| Cloud IaC         | `terraform-aws-base`, `terraform-gcp-base`, `terraform-azure-base`                                                 |
+| Verticales        | `saas`, `ecommerce`, `marketplace`, `ai-heavy`                                                                     |
 
 ## Capacidades listas para usar
 
-| Bloque | Incluido por defecto |
-|---|---|
-| Seguridad de acceso | Auth + RBAC + refresh tokens (backends) |
-| Dominio inicial | Modulos base de pagos y mensajeria |
-| Migraciones y seed | Prisma, Alembic, SQL files, Flyway (segun stack) |
-| Calidad | Tests base + auth flow e2e en templates backend |
+| Bloque                 | Incluido por defecto                                              |
+| ---------------------- | ----------------------------------------------------------------- |
+| Seguridad de acceso    | Auth + RBAC + refresh tokens (backends)                           |
+| Dominio inicial        | Modulos base de pagos y mensajeria                                |
+| Migraciones y seed     | Prisma, Alembic, SQL files, Flyway (segun stack)                  |
+| Calidad                | Tests base + auth flow e2e en templates backend                   |
 | Seguridad automatizada | `npm audit`, `pip-audit`, `govulncheck`, `OWASP dependency-check` |
-| Entrega | CI/CD con preview deploy de PR via GHCR |
+| Entrega                | CI/CD con preview deploy de PR via GHCR                           |
 
 ## Guia de uso paso a paso
 
@@ -136,22 +136,17 @@ npm run docs:dev
 
 ## CI/CD del repositorio
 
-| Workflow | Objetivo |
-|---|---|
-| `.github/workflows/template-ci.yml` | Validacion continua de templates |
-| `.github/workflows/template-cicd.yml` | Pipeline de build y despliegue |
-| `.github/workflows/template-security.yml` | Escaneos de seguridad |
-| `.github/workflows/docs-release.yml` | Publicacion de documentacion |
-
-## Nota frontend
-
-- Bootstrap queda fuera por defecto.
-- Base recomendada: React o Angular con Tailwind.
+| Workflow                                  | Objetivo                         |
+| ----------------------------------------- | -------------------------------- |
+| `.github/workflows/template-ci.yml`       | Validacion continua de templates |
+| `.github/workflows/template-cicd.yml`     | Pipeline de build y despliegue   |
+| `.github/workflows/template-security.yml` | Escaneos de seguridad            |
+| `.github/workflows/docs-release.yml`      | Publicacion de documentacion     |
 
 ## Creditos
 
 - Inspiracion tomada del Kit de Antigravity de vudovn: https://github.com/vudovn/antigravity-kit
 - Esta version fue creada especialmente para Codex, con funcionalidades nuevas enfocadas tambien en la comunidad hispanohablante.
-- Nombre: Oscar Monroy T.
+- Creado por: [Oscar Monroy T.](https://omonroyt.github.io/)
 - LinkedIn: https://www.linkedin.com/in/oscarmonroytellez/
 - Instagram: https://www.instagram.com/monroy.dev
