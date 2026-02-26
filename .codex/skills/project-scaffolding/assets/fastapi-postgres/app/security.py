@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from hashlib import sha256
-from jose import jwt
+import jwt
 from passlib.context import CryptContext
 from .config import settings
 

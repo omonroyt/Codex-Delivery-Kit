@@ -15,6 +15,6 @@ spring:
     locations: classpath:db/migration
 
 app:
-  jwtSecret: ${JWT_SECRET:change-me-java-secret}
+  jwtSecret: ${JWT_SECRET:change-me-java-secret-with-32-chars}
   accessTokenMinutes: ${ACCESS_TOKEN_MINUTES:15}
   refreshTokenDays: ${REFRESH_TOKEN_DAYS:7}

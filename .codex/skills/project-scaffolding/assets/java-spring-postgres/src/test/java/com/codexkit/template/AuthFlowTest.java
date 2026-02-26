@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
       "spring.datasource.password=",
       "spring.jpa.hibernate.ddl-auto=create-drop",
       "spring.flyway.enabled=false",
-      "app.jwtSecret=test-jwt-secret"
+      "app.jwtSecret=test-jwt-secret-with-32-chars"
     })
 @AutoConfigureMockMvc
 class AuthFlowTest {

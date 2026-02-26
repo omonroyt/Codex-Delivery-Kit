@@ -1,4 +1,5 @@
-from jose import jwt, JWTError
+import jwt
+from jwt import InvalidTokenError
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from sqlalchemy.orm import Session
@@ -17,7 +18,7 @@ def get_current_user(
     token = credentials.credentials
     try:
         payload = jwt.decode(token, settings.jwt_secret, algorithms=["HS256"])
-    except JWTError as exc:
+    except InvalidTokenError as exc:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="invalid_token") from exc
 
     if payload.get("token_type") != "access":

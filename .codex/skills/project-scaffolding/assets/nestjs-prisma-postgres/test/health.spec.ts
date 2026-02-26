@@ -2,6 +2,7 @@ import { Test } from "@nestjs/testing";
 import { INestApplication } from "@nestjs/common";
 import request from "supertest";
 import { AppModule } from "../src/app.module";
+import { PrismaService } from "../src/prisma.service";
 
 describe("HealthController", () => {
   let app: INestApplication;
@@ -9,7 +10,13 @@ describe("HealthController", () => {
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       imports: [AppModule],
-    }).compile();
+    })
+      .overrideProvider(PrismaService)
+      .useValue({
+        $connect: async () => undefined,
+        $disconnect: async () => undefined,
+      })
+      .compile();
     app = moduleRef.createNestApplication();
     await app.init();
   });

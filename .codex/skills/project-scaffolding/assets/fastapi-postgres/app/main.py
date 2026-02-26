@@ -1,7 +1,8 @@
 from datetime import timedelta, datetime
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from jose import jwt, JWTError
+import jwt
+from jwt import InvalidTokenError
 from sqlalchemy.orm import Session
 from .config import settings
 from .database import get_db
@@ -79,7 +80,7 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
 def refresh(payload: RefreshRequest, db: Session = Depends(get_db)):
     try:
         data = jwt.decode(payload.refresh_token, settings.jwt_secret, algorithms=["HS256"])
-    except JWTError as exc:
+    except InvalidTokenError as exc:
         raise HTTPException(status_code=401, detail="invalid_refresh_token") from exc
 
     if data.get("token_type") != "refresh":
