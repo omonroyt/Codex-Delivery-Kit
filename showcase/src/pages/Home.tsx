@@ -2,7 +2,19 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <section className="mx-auto max-w-3xl px-6 py-20 text-center">
+    <section className="relative mx-auto max-w-3xl px-6 py-20 text-center overflow-hidden">
+      {/* animated background blobs */}
+      <motion.div
+        className="absolute -top-16 -left-16 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70"
+        animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
+        transition={{ duration: 10, repeat: Infinity, repeatType: "mirror" }}
+      />
+      <motion.div
+        className="absolute -bottom-16 -right-16 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70"
+        animate={{ x: [0, -100, 0], y: [0, -50, 0] }}
+        transition={{ duration: 12, repeat: Infinity, repeatType: "mirror" }}
+      />
+
       <motion.p
         className="inline-flex rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-700"
         initial={{ opacity: 0 }}
