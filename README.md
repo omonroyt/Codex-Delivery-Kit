@@ -92,6 +92,20 @@ Todo el flujo esta alineado con `AGENTS.md`, `.codex/commands` y `.codex/skills`
 | Seguridad automatizada | `npm audit`, `pip-audit`, `govulncheck`, `OWASP dependency-check` |
 | Entrega                | CI/CD con preview deploy de PR via GHCR                           |
 
+## Sitio de demostración
+
+Hay una aplicación web independiente que muestra cómo funciona el kit. Usa el mismo stack de frontend (React + Tailwind + Vite) y contiene toda la documentación en un formato agradable, con animaciones y navegación fácil.
+
+Para arrancar la demo:
+
+```bash
+cd showcase
+npm install
+npm run dev    # abrirá http://localhost:5173
+```
+
+La carpeta `showcase/public/docs` ya incluye todos los archivos Markdown originales del repositorio; así puedes navegar la documentación desde la interfaz.
+
 ## Guia de uso paso a paso
 
 ### 1) Inicializar contexto
