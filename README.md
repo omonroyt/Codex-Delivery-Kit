@@ -6,7 +6,7 @@ Kit open source para desarrollar software con Codex de punta a punta: discovery,
 
 - Estructura nativa Codex (`AGENTS.md`, `/.codex/commands`, `/.codex/skills`).
 - Flujo profesional completo, pero configurable.
-- V1 en espanol con reglas ASCII-safe para minimizar problemas con acentos y letra n.
+- V1 en español con reglas ASCII-safe para minimizar problemas con acentos y letra n.
 - Soporte de integraciones IA (MCP + n8n) y despliegue cloud.
 
 ## Lo que ya incluye
