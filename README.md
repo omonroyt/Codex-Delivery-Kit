@@ -92,19 +92,22 @@ Todo el flujo esta alineado con `AGENTS.md`, `.codex/commands` y `.codex/skills`
 | Seguridad automatizada | `npm audit`, `pip-audit`, `govulncheck`, `OWASP dependency-check` |
 | Entrega                | CI/CD con preview deploy de PR via GHCR                           |
 
-## Sitio de demostración
+## Sitio de demostración (proyecto separado)
 
-Hay una aplicación web independiente que muestra cómo funciona el kit. Usa el mismo stack de frontend (React + Tailwind + Vite) y contiene toda la documentación en un formato agradable, con animaciones y navegación fácil.
+Originalmente el repositorio contenía una aplicación web de demostración (`showcase/`),
+pero para evitar saturar a usuarios finales se ha extraído a un **repositorio independiente**.
+La demo sigue usando el mismo stack (React + Tailwind + Vite) y muestra la documentación
+completa del kit con animaciones y navegación agradable.
 
-Para arrancar la demo:
+Si quieres trabajar con la demo, clona el repositorio específico (ej: `github.com/tuusuario/codex-delivery-kit-showcase`) y sigue las instrucciones allí:
 
 ```bash
-cd showcase
+# dentro del repositorio de showcase
 npm install
-npm run dev    # abrirá http://localhost:5173
+npm run dev    # abre http://localhost:5173
 ```
 
-La carpeta `showcase/public/docs` ya incluye todos los archivos Markdown originales del repositorio; así puedes navegar la documentación desde la interfaz.
+En este repositorio principal ya no se incluye la carpeta `showcase`.
 
 ## Guia de uso paso a paso
 
