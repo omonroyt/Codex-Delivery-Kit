@@ -1,0 +1,20 @@
+server:
+  port: ${PORT:8081}
+
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/appdb}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+app:
+  jwtSecret: ${JWT_SECRET:change-me-java-secret}
+  accessTokenMinutes: ${ACCESS_TOKEN_MINUTES:15}
+  refreshTokenDays: ${REFRESH_TOKEN_DAYS:7}

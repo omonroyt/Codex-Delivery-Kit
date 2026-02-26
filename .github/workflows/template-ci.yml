@@ -1,0 +1,44 @@
+name: Template CI
+
+on:
+  push:
+    paths:
+      - "scripts/**"
+      - ".codex/commands/scaffold.md"
+      - ".codex/skills/project-scaffolding/**"
+      - ".github/workflows/template-ci.yml"
+  pull_request:
+    paths:
+      - "scripts/**"
+      - ".codex/commands/scaffold.md"
+      - ".codex/skills/project-scaffolding/**"
+      - ".github/workflows/template-ci.yml"
+
+jobs:
+  verify-templates:
+    name: Verify templates on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check script syntax
+        run: |
+          node --check scripts/scaffold-webapp.js
+          node --check scripts/verify-scaffold-templates.js
+          node --check scripts/init-context.js
+          node --check scripts/verify-checklist.js
+
+      - name: Verify scaffold templates with install and build
+        run: node scripts/verify-scaffold-templates.js --with-install
+
