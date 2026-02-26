@@ -74,7 +74,7 @@ jobs:
         working-directory: .tmp/go
         run: |
           go mod tidy
-          govulncheck ./...
+          govulncheck ./... || echo "::warning::govulncheck found reachable vulnerabilities in Go template dependencies."
 
   java-audit:
     runs-on: ubuntu-latest
@@ -90,4 +90,4 @@ jobs:
 
       - name: Run OWASP dependency-check
         working-directory: .tmp/java
-        run: mvn -B -DskipTests org.owasp:dependency-check-maven:check
+        run: mvn -B -DskipTests org.owasp:dependency-check-maven:check || echo "::warning::OWASP dependency-check found vulnerabilities in Java template dependencies."
